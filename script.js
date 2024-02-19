@@ -40,12 +40,13 @@ const fetchResult = async (targetlocation) => {
 
 function updateDetails(temp, time, locationName, condition) {
 
+    let degree = "℃"
     let splitData = time.split(" ")[0]
     let splitTime = time.split(" ")[1]
 
     let currentDay = getDayName(new Date(splitData).getDay())
 
-    temperatureFeild.innerText = temp
+    temperatureFeild.innerText = `${temp}${degree}`
     locationFeild.innerText = locationName
     dataFeild.innerText = `${splitTime} - ${currentDay} ${splitData}`
     weatherFeild.innerText = condition
